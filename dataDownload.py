@@ -39,7 +39,7 @@ for i in range(0, len(data)):
             fixed = fixNormal(data.at[i, "title"])
             movie_data = printData("https://www.rottentomatoes.com/m/" + fixed)
             # Uncomment to keep track of what movie is being scraped
-            print("Success at fixNormal at new title: " + str(i))
+            # print("Success at fixNormal at new title: " + str(i))
             df.at[j, "realTitle"] = movie_data[0]
             df.at[j, "criticsConcensus"] = movie_data[1]
             df.at[j, "tomatoMeter"] = movie_data[2]
