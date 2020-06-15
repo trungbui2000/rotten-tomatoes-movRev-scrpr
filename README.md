@@ -6,7 +6,7 @@ The purpose of this project is to generate a scraper function that allows the us
 2. At each iteration, we will construct the appropriate URL for the movie name
 3. Using the constructed URL, we will feed it into the function named `printData` that will return the information about the movie
 
-## Method 
+## Methodology
 * Using the library `BeautifulSoup` as a way to parse through HTML elements, we were able to precisely pinpoint the relevant information we want to extracted from the given movie. Next, we generalized the method functionality to be able to take in movies URL and named the method `printData` which is created inside `dataScraping.py`
 * We then found a dataset named `movies_data.csv` that contains 45,000 movie names, and by parsing through the dataset, we can extract the movie name and use those names to construct the URL that goes into our `printData` method. Since Rotten Tomatoes does not have one set of naming convention for all its movies, there are many conventions that we found for the majority of the movies and thus, we use five try/excerpt blocks nested in each other so that if one convention is wrong, we can try other conventions. Consequently, if all conventions fail, we will put the index of the movie in the `movies_data.csv` inside the `error.txt` file and carry on to the next movie down the list. In the end all of the movies that were successfully scraped will be stored inside the file named `data-scraped.csv`. All these processes are illustrated in the `dataDownload.py`.
 * Since our datascraping took a considerably long time, we came up with the solution to run multiple scrapers simultaneously to speed up the scraping processes. As a result, it we ran seven scrapers in parallel with each other and our total data scraping time was around 2 hours and 30 minutes with each processes scraped on around 6,430 movies. All of the initial scraped files are stored inside the `Scraped Files` folder, each have the naming convention of: `[starting index]-[ending index - 1].csv`. 
@@ -27,3 +27,16 @@ The purpose of this project is to generate a scraper function that allows the us
 ## Challenges 
 * The main problem that we struggled with throughout this project is to find the appropriate conventions to increase our scraper success rate, however as there are so many conventions, it was difficult to capture all of them.
 * Additionally, we found that for the majority of the movies we scraped, there are a lot of attributes that were missing from the movies and when this happens, the scraper puts "nothing" in the appropriate data slots. Below is an example of a movie that has all the attributes:
+![alt text](https://github.com/trungbui2000/rotten-tomatoes-movRev-scrpr/blob/master/ImageEx/goodExample.png?raw=true "Good Example")
+<br /> While a bad example would look like this:
+![alt text](https://github.com/trungbui2000/rotten-tomatoes-movRev-scrpr/blob/master/ImageEx/badExample.png?raw=true "Bad Example")
+<br /> The bad examples shows missing values such as the Critics Census, Tomatometer and Total Count which were presented in multiple moves that we scraped. Therefore, we went over our `combined.csv` file and cleaned it into the `combined_cleaned.csv` where in the new cleaned files, only images with the majority of the neccessary atrributes such as Critics Census, Tomatometer and Total Count can be inside.  As a result, our scraped movies went from 18,445 to 11,382 movies after we cleaned the `combined.csv` file.
+
+## Future Work
+* We hoped that by having a dataset of 11,382 movies we would be able to construct a regressional analysis on the possible factors that made the audience rating high for a certain movie and low for the other. 
+* Additonally, we are interested utilizing OpenAI GPT-2 language modules model that can construct a synopsis using an invented movie title, critics rating and audience score.
+
+## Contributors 
+-   Trung Bui
+-   Minh Hua
+-   Quang Pham
