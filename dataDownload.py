@@ -31,7 +31,7 @@ df = pd.DataFrame(columns = ["dataIndex", "realTitle", "criticsConcensus", "toma
             "audienceScore", "audienceCount", "realSynopsis", "rating", "genreString", 
             "directedBy", "studio", "runTime", "cast"])
 
-data = pd.read_csv("movie_data.csv", error_bad_lines=False, dtype='unicode')
+data = pd.read_csv("movie_data.csv", error_bad_lines=False, dtype='unicode')  
 
 # Looping through the entire dataset, could be faster if you split up into smaller chunks like range(0,2000), (2000, 4000), (4000,6000) until the end of the data 
 for i in range(0, len(data)):
