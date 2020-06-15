@@ -223,3 +223,8 @@ def printData(url):
     return [realTitle, criticsConcensus, tomatoMeter, tomatoCount, 
             audienceScore, audienceCount, realSynopsis, rating, genreString, 
             directedBy, studio, runTime, cast]
+
+
+
+# Run First - Uncomment the code below
+# printData("https://www.rottentomatoes.com/m/jumanji_the_next_level")
