@@ -26,6 +26,4 @@ The purpose of this project is to generate a scraper function that allows the us
 
 ## Challenges 
 * The main problem that we struggled with throughout this project is to find the appropriate conventions to increase our scraper success rate, however as there are so many conventions, it was difficult to capture all of them.
-* Additionally, we found that for the majority of the movies we scraped, there are a lot of attributes that were missing from the movies and when this happens, the scraper puts "nothing" in the appropriate data slots. As a result, we went through multiple sites an
-
-
+* Additionally, we found that for the majority of the movies we scraped, there are a lot of attributes that were missing from the movies and when this happens, the scraper puts "nothing" in the appropriate data slots. Below is an example of a movie that has all the attributes:
